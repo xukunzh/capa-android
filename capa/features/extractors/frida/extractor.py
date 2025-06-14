@@ -42,7 +42,7 @@ class FridaExtractor(DynamicFeatureExtractor):
 
     def extract_global_features(self) -> Iterator[tuple[Feature, Address]]:
         """Basic global features"""
-        yield OS("android"), NO_ADDRESS  # OS: Frida doesn't provide OS info
+        yield OS("android"), NO_ADDRESS # OS: Frida doesn't provide OS info
 
         if self.report.processes:
             process = self.report.processes[0]
@@ -109,7 +109,7 @@ class FridaExtractor(DynamicFeatureExtractor):
 
     def get_call_name(self, ph: ProcessHandle, th: ThreadHandle, ch: CallHandle) -> str:
         """Format API call name and parameters"""
-        # TODO: Implement after extract_call_features agruments
+        # TODO: Implement after extract_call_features
         call: Call = ch.inner
         
         parts = []
