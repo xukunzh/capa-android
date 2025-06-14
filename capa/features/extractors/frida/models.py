@@ -15,7 +15,7 @@ class Call(FlexibleModel):
     call_id: int                             
     # timestamp: Optional[str] = None
     # arguments: Dict[str, Any] = Field(default_factory=dict)
-    # return_value: Optional[Any] = None     # Not very sure if we should use str as the return value type
+    # return_value: Optional[Any] = None     # Not very sure if we should use str as the return value type.
     # caller: Optional[str] = None
 
 
@@ -30,7 +30,7 @@ class Process(FlexibleModel):
 
 class FridaReport(FlexibleModel):
     """Main report structure for Android analysis"""
-    # TODO: Some more file-level information may go here
+    # TODO: Some more file-level information may go here.
     package_name: str
     processes: List[Process] = Field(default_factory=list)
     
