@@ -12,7 +12,8 @@ class Call(FlexibleModel):
     api_name: str           # API name like "java.io.File.<init>", not sure if need to seperate 'japi' 'napi' 'jni'...
     process_id: int
     thread_id: int 
-    call_id: int                             
+    call_id: int     
+
     # timestamp: Optional[str] = None
     # arguments: Dict[str, Any] = Field(default_factory=dict)
     # return_value: Optional[Any] = None     # Not very sure if we should use str as the return value type.
@@ -21,7 +22,8 @@ class Call(FlexibleModel):
 
 class Process(FlexibleModel):
     """Process information from Frida analysis"""
-    # ppid is omitted here as Android apps are usually single-process; it will be set to 0 in extractor.py
+    # ppid不存储在这里，因为Android应用通常是单进程的，在extractor.py中处理时会设置ppid=0
+    # Added by mistake. ppid is omitted here as Android apps are usually single-process; it will be set to 0 in extractor.py
     pid: int
     package_name: str
     arch: Optional[str] = None
